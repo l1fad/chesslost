@@ -4,7 +4,7 @@
 void main() {
 
 char a[8][8];
-int i,j;
+int i,j,x1,y1,x2,y2;
 a[0][0]='r'; 
 a[0][7]='r'; 
 
@@ -56,4 +56,30 @@ printf("  ");
 for (i=0;i<8;i++)
 	printf("%d",1+i);
 printf("\n");
+printf("\nenter x1 y1:\n");
+scanf("%d %d",&x1,&y1);
+printf("\nenter x2 y2:\n");
+scanf("%d %d",&x2,&y2);
+do
+{
+
+a[8-y2][x2-1]=a[8-y1][x1-1];
+a[8-y1][x1-1]=' ';
+for (i=0;i<8;i++) 
+{	printf("%d ",8-i);
+	for (j=0;j<8;j++)
+	{
+		printf("%c",a[i][j]);
+	}
+	printf("\n");
+}
+printf("  ");
+for (i=0;i<8;i++)
+	printf("%d",1+i);
+printf("\n");
+printf("\nenter x1 y1:\n");
+scanf("%d %d",&x1,&y1);
+printf("\nenter x2 y2:\n");
+scanf("%d %d",&x2,&y2);
+} while((a[8-y2][x2-1]!='k') && (a[8-y2][x2-1]!='K'));
 } 
